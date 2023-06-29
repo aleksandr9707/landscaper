@@ -16,7 +16,10 @@ def main():
         choice = input("Enter your choice (1-4): ")
 
         if choice == "1":
-            if has_scissors:
+            if has_lawnmower:
+                money += 50
+                print("You spent the day cutting lawns with your lawnmower and earned $50.")
+            elif has_scissors:
                 money += 5
                 print("You spent the day cutting lawns with your scissors and earned $5.")
             else:
@@ -48,5 +51,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
