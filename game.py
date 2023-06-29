@@ -1,6 +1,7 @@
 def main():
     money = 0
     has_scissors = False
+    has_lawnmower = False
 
     print("Welcome to your landscaping business!")
 
@@ -9,14 +10,15 @@ def main():
         print("Options:")
         print("1. Cut lawns")
         print("2. Buy rusty scissors ($5)")
-        print("3. Quit")
+        print("3. Buy old-timey push lawnmower ($25)")
+        print("4. Quit")
 
-        choice = input("Enter your choice (1-3): ")
+        choice = input("Enter your choice (1-4): ")
 
         if choice == "1":
             if has_scissors:
                 money += 5
-                print("You spent the day cutting lawns and earned $5.")
+                print("You spent the day cutting lawns with your scissors and earned $5.")
             else:
                 money += 1
                 print("You spent the day cutting lawns and earned $1.")
@@ -30,6 +32,15 @@ def main():
             else:
                 print("Sorry, you don't have enough money to buy scissors.")
         elif choice == "3":
+            if has_lawnmower:
+                print("You already have a lawnmower.")
+            elif money >= 25:
+                money -= 25
+                has_lawnmower = True
+                print("Congratulations! You bought an old-timey push lawnmower.")
+            else:
+                print("Sorry, you don't have enough money to buy a lawnmower.")
+        elif choice == "4":
             print("Thank you for playing!")
             break
         else:
@@ -37,4 +48,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
