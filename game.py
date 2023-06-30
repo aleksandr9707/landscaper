@@ -20,7 +20,10 @@ def main():
         choice = input("Enter your choice (1-6): ")
 
         if choice == "1":
-            if has_fancy_lawnmower:
+            if has_students:
+                money +=250
+                print("You spent the day relaxing while a team of starving students mowed your lawn. You made $250")
+            elif has_fancy_lawnmower:
                 money += 100
                 print("You spent the day cutting lawns with your fancy lawnmower and earned $100.")
             elif has_lawnmower:
@@ -32,6 +35,10 @@ def main():
             else:
                 money += 1
                 print("You spent the day cutting lawns and earned $1.")
+
+            if money >= 1000 and has_students:
+                print("Congratulations! You have a team of starving students and $1000. You've won the game!")
+                break
         elif choice == "2":
             if has_scissors:
                 print("You already have scissors.")
@@ -69,15 +76,12 @@ def main():
                 print("Congratulations! You hired a team of starving students.")
             else:
                 print("Sorry, you don't have enough money to hire a team of starving students") 
-
-
-
-
         elif choice == "6":
             print("Thank you for playing!")
             break
         else:
             print("Invalid input. Please enter a valid choice.")
+        
 
 if __name__ == '__main__':
     main()
