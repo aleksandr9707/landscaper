@@ -3,6 +3,7 @@ def main():
     has_scissors = False
     has_lawnmower = False
     has_fancy_lawnmower = False
+    has_students = False
 
     print("Welcome to your landscaping business!")
 
@@ -13,9 +14,10 @@ def main():
         print("2. Buy rusty scissors ($5)")
         print("3. Buy old-timey push lawnmower ($25)")
         print("4. Buy a fancy battery-powered lawnmower ($250)")
-        print("5. Quit")
+        print("5. Buy a  team of starving students ($500)")
+        print("6. Quit")
 
-        choice = input("Enter your choice (1-5): ")
+        choice = input("Enter your choice (1-6): ")
 
         if choice == "1":
             if has_fancy_lawnmower:
@@ -58,8 +60,20 @@ def main():
                 print("Congratulations! You bought an fancy battery-powered lawnmower.")
             else:
                 print("Sorry, you don't have enough money to buy a fancy battery-powered lawnmower.") 
-
         elif choice == "5":
+            if has_students:
+                print("You already have a team of starving students.")
+            elif money >= 500:
+                money -= 500
+                has_students = True
+                print("Congratulations! You hired a team of starving students.")
+            else:
+                print("Sorry, you don't have enough money to hire a team of starving students") 
+
+
+
+
+        elif choice == "6":
             print("Thank you for playing!")
             break
         else:
